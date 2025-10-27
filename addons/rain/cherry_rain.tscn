@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck201iocywi6x"]
+
+[ext_resource type="Texture2D" uid="uid://qtcck02xg2yr" path="res://addons/rain/petal2.png" id="1_1sybq"]
+[ext_resource type="Material" uid="uid://3omye8dfixmd" path="res://addons/rain/cherry_petal.tres" id="2_lh05x"]
+[ext_resource type="Script" uid="uid://bmt8qymufeabw" path="res://stages/world_1/gfx/rain/rain.gd" id="3_auvs6"]
+
+[node name="Cherry Fall Small" type="GPUParticles2D"]
+z_index = 1
+amount = 80
+texture = ExtResource("1_1sybq")
+lifetime = 1.5
+preprocess = 10.0
+speed_scale = 0.2
+randomness = 0.5
+visibility_rect = Rect2(-160, -384, 960, 1024)
+draw_order = 0
+trail_lifetime = 0.53
+process_material = ExtResource("2_lh05x")
+script = ExtResource("3_auvs6")

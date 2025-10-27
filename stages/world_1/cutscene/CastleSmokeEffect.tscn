@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs4avj3ara0yh"]
+
+[ext_resource type="Script" uid="uid://d5aemj4pexab" path="res://stages/world_1/cutscene/castle_smoke_effect.gd" id="1_4ttwe"]
+[ext_resource type="Texture2D" uid="uid://cj5gfrfjwdiwc" path="res://stages/world_1/cutscene/smoke.png" id="1_6kqmt"]
+
+[node name="CastleSmokeEffect" type="Node2D"]
+script = ExtResource("1_4ttwe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6kqmt")

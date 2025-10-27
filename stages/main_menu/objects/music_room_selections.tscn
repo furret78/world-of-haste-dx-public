@@ -1,0 +1,364 @@
+[gd_scene load_steps=30 format=3 uid="uid://ngi3cbkeya0w"]
+
+[ext_resource type="Script" uid="uid://cn67joohcklbn" path="res://engine/components/ui/generic/menu_items_controller.gd" id="1_tvbji"]
+[ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="1_x5nro"]
+[ext_resource type="AudioStream" uid="uid://dyg3vv0yc1lkk" path="res://stages/world_1/music/title_menu.it" id="2_uywpa"]
+[ext_resource type="Script" uid="uid://dsvmt2vlslp5b" path="res://stages/main_menu/scripts/music_loader_special.gd" id="2_vxe6c"]
+[ext_resource type="FontFile" uid="uid://bgsavu6joui2r" path="res://engine/fonts/junebug.ttf" id="3_uywpa"]
+[ext_resource type="Script" uid="uid://vfi6gaxnm8e3" path="res://stages/main_menu/scripts/musicroom_tracksel.gd" id="3_wqedi"]
+[ext_resource type="Script" uid="uid://bl3ih6cnp4taq" path="res://stages/main_menu/objects/music_room_handler.gd" id="4_vxe6c"]
+[ext_resource type="Script" uid="uid://beysu21c0vky3" path="res://stages/main_menu/scripts/minix_selectors_anim.gd" id="5_exeaw"]
+[ext_resource type="AudioStream" uid="uid://15fu05kwj6xg" path="res://stages/world_1/music/dream_more_scarlet.ogg" id="7_wqedi"]
+[ext_resource type="AudioStream" uid="uid://c1va567cln81n" path="res://engine/scenes/save_game_room/music/save_game_room.it" id="7_x5nro"]
+[ext_resource type="Script" uid="uid://dmjphydocrwu6" path="res://stages/main_menu/objects/track_details.gd" id="8_h83tb"]
+[ext_resource type="AudioStream" uid="uid://cs5lvjjdakm60" path="res://stages/world_1/music/sirens.mod" id="9_uywpa"]
+[ext_resource type="Script" uid="uid://cvh0deml0thih" path="res://stages/main_menu/scripts/musicroom_exit.gd" id="10_tvbji"]
+[ext_resource type="AudioStream" uid="uid://than4iny5sm1" path="res://stages/world_1/music/white_flag.ogg" id="11_vxe6c"]
+[ext_resource type="AudioStream" uid="uid://neeml0ii8tt0" path="res://stages/world_1/music/dark_flight.ogg" id="12_exeaw"]
+[ext_resource type="AudioStream" uid="uid://b4bjb1ov0dt26" path="res://stages/world_1/music/before_boss_room.it" id="13_c3qxw"]
+[ext_resource type="Script" uid="uid://cl31gyhukew6s" path="res://engine/components/ui/generic/menu_selector.gd" id="13_lqfwp"]
+[ext_resource type="SpriteFrames" uid="uid://br3qktscdu8fx" path="res://engine/objects/players/prefabs/animations/mario/selector.tres" id="14_0pvf4"]
+[ext_resource type="AudioStream" uid="uid://bm6en8bw5vv0v" path="res://stages/world_1/music/onigashima.ogg" id="14_qwcsj"]
+[ext_resource type="Script" uid="uid://b1fji5ve3eoe0" path="res://engine/components/ui/generic/selector_player_animation.gd" id="15_61t80"]
+[ext_resource type="AudioStream" uid="uid://c2716hw2w6kai" path="res://stages/world_1/music/bombastic-968.mod" id="15_lqfwp"]
+[ext_resource type="AudioStream" uid="uid://bhqt1f4oegqsp" path="res://engine/scenes/map/music/world_complete.ogg" id="15_xun5g"]
+[ext_resource type="AudioStream" uid="uid://bqiy8kvcsy0rk" path="res://engine/scripts/classes/level/complete.ogg" id="16_lqfwp"]
+[ext_resource type="Script" uid="uid://dr7dh7gdcrv3h" path="res://stages/main_menu/scripts/camera_tweaks_menu.gd" id="16_nvdi5"]
+[ext_resource type="AudioStream" uid="uid://ms4fshtulnrl" path="res://stages/world_1/music/touhou_win.ogg" id="17_fx4lq"]
+[ext_resource type="AudioStream" uid="uid://d3pkf2n3lktav" path="res://stages/world_1/music/bowser_win.ogg" id="18_qvf8g"]
+[ext_resource type="AudioStream" uid="uid://c54m13b157yo7" path="res://engine/scenes/credits/music/credits.mod" id="19_05k7u"]
+[ext_resource type="FontVariation" uid="uid://4h0cbbutybo2" path="res://engine/fonts/font_variations/mister_earl_variation.tres" id="23_lqfwp"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4hroi"]
+color = Color(0, 0, 0.329412, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="MusicLoaderSpecial" parent="." instance=ExtResource("1_x5nro")]
+script = ExtResource("2_vxe6c")
+music = Array[Resource]([ExtResource("2_uywpa")])
+channel_id = 0
+play_immediately = false
+
+[node name="MusicRoom" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 24.0
+offset_right = 624.0
+offset_bottom = 456.0
+theme_override_constants/separation = 14
+script = ExtResource("1_tvbji")
+focused = false
+prev_screen_node_path = NodePath("ExitMenu")
+
+[node name="HSeparator5" type="HSeparator" parent="MusicRoom"]
+layout_mode = 2
+theme_override_constants/separation = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
+
+[node name="Label" type="Label" parent="MusicRoom/HSeparator5"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 456.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(1, 1, 0.792157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_uywpa")
+theme_override_font_sizes/font_size = 12
+text = "the discography of an adventure past"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator6" type="HSeparator" parent="MusicRoom"]
+layout_mode = 2
+theme_override_constants/separation = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
+
+[node name="TrackChanger" type="HBoxContainer" parent="MusicRoom"]
+layout_mode = 2
+script = ExtResource("3_wqedi")
+
+[node name="MusicRoomHandler" type="Node" parent="MusicRoom/TrackChanger"]
+script = ExtResource("4_vxe6c")
+track_list = [{
+"details": PackedStringArray("Janne Kivilahti (kiwi2000)", "Hiscore", "The main menu theme. Recorded from Pekka Kana 2."),
+"music": ExtResource("2_uywpa")
+}, {
+"details": PackedStringArray("Koji Kondo", "Wandering the Plains", "The Save Game Room theme. Recorded from Super Mario World, in which it was one of the world map themes."),
+"music": ExtResource("7_x5nro")
+}, {
+"details": PackedStringArray("Jun\'ya Ota (ZUN)", "A Dream More Scarlet than Red", "The map theme. Recorded from Touhou Koumakyou ~ the Embodiment of Scarlet Devil."),
+"music": ExtResource("7_wqedi")
+}, {
+"details": PackedStringArray("Dave the Brave", "Sirens", "The theme of the level Cloudburst Marathon. From the demoscene."),
+"music": ExtResource("9_uywpa")
+}, {
+"details": PackedStringArray("Jun\'ya Ota (ZUN)", "White Flag of Usa Shrine", "The theme of the level Flowering Spring. Recorded from Touhou Kaeizuka ~ Phantasmagoria of Flower View."),
+"music": ExtResource("11_vxe6c")
+}, {
+"details": PackedStringArray("Jun\'ya Ota (ZUN)", "Oriental Dark Flight", "The theme of the level Blizzard Sprint. Recorded from Touhou Kaeizuka ~ Phantasmagoria of Flower View."),
+"music": ExtResource("12_exeaw")
+}, {
+"details": PackedStringArray("Koji Kondo", "In the Boss Room", "The theme that plays before fighting Bowser. Recorded from Super Mario World 2: Yoshi\'s Island."),
+"music": ExtResource("13_c3qxw")
+}, {
+"details": PackedStringArray("Jun\'ya Ota (ZUN)", "The Fabled Land of Onigashima ~ Missing Power", "Bowser\'s boss battle theme. Recorded from Touhou Suimusou ~ Immaterial and Missing Power."),
+"music": ExtResource("14_qwcsj")
+}, {
+"details": PackedStringArray("revisq/anadune", "Bombastic", "The theme of the extra stage. From the demoscene. Seems to have been composed for the \"Bombastic Music Pack #2\" modtrack album."),
+"music": ExtResource("15_lqfwp")
+}, {
+"details": PackedStringArray("Koji Kondo", "Castle Clear Fanfare", "The standard level complete theme. Recorded from Super Mario World."),
+"music": ExtResource("16_lqfwp")
+}, {
+"details": PackedStringArray("Hooded Edge", "Victory Demonstration", "The alternative level complete theme. Arranged from \"Victory Demonstration\" in Touhou Yumejikuu ~ Phantasmagoria of Dim.Dream, composed by Jun\'ya Ota (ZUN)."),
+"music": ExtResource("17_fx4lq")
+}, {
+"details": PackedStringArray("Koji Kondo", "Bowser Defeated", "The theme that plays when Bowser has been defeated. Recorded from Super Mario World 2: Yoshi\'s Island."),
+"music": ExtResource("18_qvf8g")
+}, {
+"details": PackedStringArray("Koji Kondo", "Goal!", "The map complete theme. Recorded from Super Mario World 2: Yoshi\'s Island."),
+"music": ExtResource("15_xun5g")
+}, {
+"details": PackedStringArray("Martin Iveson", "Ending & Credits", "Credits theme. Recorded from Blastar."),
+"music": ExtResource("19_05k7u")
+}]
+
+[node name="Label" type="Label" parent="MusicRoom/TrackChanger"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_uywpa")
+theme_override_font_sizes/font_size = 12
+text = "change track"
+uppercase = true
+
+[node name="TrackSelected" type="HBoxContainer" parent="MusicRoom/TrackChanger"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 8
+
+[node name="CurrentTrack" type="Label" parent="MusicRoom/TrackChanger/TrackSelected"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_uywpa")
+theme_override_font_sizes/font_size = 13
+text = "TRACK NO. 1"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="arrow" type="Label" parent="MusicRoom/TrackChanger/TrackSelected/CurrentTrack"]
+layout_mode = 0
+offset_left = -32.0
+offset_right = -7.0
+offset_bottom = 16.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_uywpa")
+theme_override_font_sizes/font_size = 13
+text = "<--"
+uppercase = true
+script = ExtResource("5_exeaw")
+
+[node name="ArrowRight" type="HBoxContainer" parent="MusicRoom/TrackChanger/TrackSelected"]
+layout_mode = 2
+
+[node name="arrow" type="Label" parent="MusicRoom/TrackChanger/TrackSelected/ArrowRight"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_uywpa")
+theme_override_font_sizes/font_size = 13
+text = "-->"
+uppercase = true
+script = ExtResource("5_exeaw")
+left_side = false
+
+[node name="TrackTitle" type="Label" parent="MusicRoom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.596078, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_uywpa")
+theme_override_font_sizes/font_size = 12
+text = "now playing:"
+uppercase = true
+script = ExtResource("8_h83tb")
+detail_type = 1
+trigger_mouse = false
+
+[node name="TrackTitleValue" type="Label" parent="MusicRoom/TrackTitle"]
+layout_mode = 2
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = -16.0
+offset_right = 448.0
+offset_bottom = 16.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_uywpa")
+theme_override_font_sizes/font_size = 13
+text = "hiscore"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="TrackAuthor" type="Label" parent="MusicRoom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.596078, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_uywpa")
+theme_override_font_sizes/font_size = 12
+text = "composer:"
+uppercase = true
+script = ExtResource("8_h83tb")
+trigger_mouse = false
+
+[node name="TrackAuthorValue" type="Label" parent="MusicRoom/TrackAuthor"]
+layout_mode = 2
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 98.0
+offset_top = -7.0
+offset_right = 448.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_uywpa")
+theme_override_font_sizes/font_size = 13
+text = "Janne Kivilahti (kiwi2000)"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 1
+uppercase = true
+
+[node name="TrackComment" type="Label" parent="MusicRoom"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.596078, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_uywpa")
+theme_override_font_sizes/font_size = 12
+text = "comments:"
+uppercase = true
+script = ExtResource("8_h83tb")
+detail_type = 2
+trigger_mouse = false
+
+[node name="TrackCommentValue" type="Label" parent="MusicRoom/TrackComment"]
+layout_mode = 2
+offset_top = 28.0
+offset_right = 456.0
+offset_bottom = 290.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("23_lqfwp")
+theme_override_font_sizes/font_size = 30
+text = "The main menu theme. Recorded from Pekka Kana 2."
+autowrap_mode = 2
+
+[node name="ExitMenu" type="HBoxContainer" parent="MusicRoom"]
+layout_mode = 2
+size_flags_vertical = 10
+script = ExtResource("10_tvbji")
+
+[node name="Label" type="Label" parent="MusicRoom/ExitMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.792157, 0.792157, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_uywpa")
+theme_override_font_sizes/font_size = 12
+text = "go back to main menu"
+uppercase = true
+
+[node name="Selector" type="Node2D" parent="."]
+physics_interpolation_mode = 1
+script = ExtResource("13_lqfwp")
+smooth_speed = 0.4
+position_padding = 20
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Selector"]
+sprite_frames = ExtResource("14_0pvf4")
+script = ExtResource("15_61t80")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
+process_callback = 0
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 480
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 25.0
+editor_draw_screen = false
+script = ExtResource("16_nvdi5")
+menu_controller_path = NodePath("../MusicRoom")
+
+[connection signal="selected" from="MusicRoom" to="Selector" method="handle_selection"]
+[connection signal="selected" from="MusicRoom" to="Camera2D" method="handle_selection"]
+[connection signal="change_track_UI" from="MusicRoom/TrackChanger/MusicRoomHandler" to="MusicRoom/TrackTitle" method="_on_music_room_handler_change_track_ui"]
+[connection signal="change_track_UI" from="MusicRoom/TrackChanger/MusicRoomHandler" to="MusicRoom/TrackAuthor" method="_on_music_room_handler_change_track_ui"]
+[connection signal="change_track_UI" from="MusicRoom/TrackChanger/MusicRoomHandler" to="MusicRoom/TrackComment" method="_on_music_room_handler_change_track_ui"]
+[connection signal="play_new_track" from="MusicRoom/TrackChanger/MusicRoomHandler" to="MusicLoaderSpecial" method="_on_music_room_handler_play_new_track"]
+[connection signal="reset_music" from="MusicRoom/ExitMenu" to="MusicLoaderSpecial" method="_on_exit_menu_reset_music"]

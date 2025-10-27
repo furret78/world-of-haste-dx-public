@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7k4x256aduiy"]
+
+[ext_resource type="Texture2D" uid="uid://5epnuh78gpgn" path="res://stages/world_1/level textures/castlesnow.png" id="1_mvp54"]
+
+[node name="CastleSnowBottom" type="Sprite2D"]
+texture = ExtResource("1_mvp54")

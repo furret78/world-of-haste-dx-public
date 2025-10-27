@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1rrdycjf3i40"]
+
+[ext_resource type="Texture2D" uid="uid://cl5tntn87x3pe" path="res://stages/world_1/level textures/snow_grass.png" id="1_g7153"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2brv"]
+atlas = ExtResource("1_g7153")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pepes"]
+atlas = ExtResource("1_g7153")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnixl"]
+atlas = ExtResource("1_g7153")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rwsux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2brv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pepes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnixl")
+}],
+"loop": true,
+"name": &"grasssnow",
+"speed": 5.0
+}]
+
+[node name="GrassSnow" type="AnimatedSprite2D"]
+position = Vector2(16, 0)
+sprite_frames = SubResource("SpriteFrames_rwsux")
+animation = &"grasssnow"
+autoplay = "grasssnow"
+frame_progress = 0.339139

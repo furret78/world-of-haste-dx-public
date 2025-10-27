@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://brb0dn2mn41el"]
+
+[ext_resource type="PackedScene" uid="uid://dw0wrbt8k1tph" path="res://stages/world_1/gfx/rain/snow_with_scrolling.tscn" id="1_xc2mr"]
+[ext_resource type="Texture2D" uid="uid://dqiniq1e4ye2q" path="res://stages/world_1/gfx/rain/snowflake2.png" id="2_lk6rb"]
+
+[sub_resource type="Gradient" id="Gradient_hvayu"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e2g6i"]
+gradient = SubResource("Gradient_hvayu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xc2mr"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(640, -64, 0)
+emission_shape = 3
+emission_box_extents = Vector3(640, 0, 0)
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(-0.3, 0.6, 0)
+spread = 20.0
+flatness = 1.0
+initial_velocity_min = 592.42
+initial_velocity_max = 625.93
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_e2g6i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lk6rb"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(640, -64, 0)
+emission_shape = 3
+emission_box_extents = Vector3(640, 0, 0)
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(-0.3, 0.6, 0)
+spread = 20.0
+flatness = 1.0
+initial_velocity_min = 592.42
+initial_velocity_max = 625.93
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_e2g6i")
+
+[node name="Snowfall" type="Node2D"]
+
+[node name="Snow" parent="." instance=ExtResource("1_xc2mr")]
+amount = 100
+visibility_rect = Rect2(0, 0, 14624, 480)
+process_material = SubResource("ParticleProcessMaterial_xc2mr")
+
+[node name="Snow2" parent="." instance=ExtResource("1_xc2mr")]
+amount = 200
+texture = ExtResource("2_lk6rb")
+visibility_rect = Rect2(0, 0, 14624, 480)
+process_material = SubResource("ParticleProcessMaterial_lk6rb")

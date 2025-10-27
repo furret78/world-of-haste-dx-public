@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://g62eemf32ip0"]
+
+[ext_resource type="PackedScene" uid="uid://dbvicqhnexj1c" path="res://stages/world_1/gfx/rain/cherry_rain.tscn" id="1_qyshs"]
+[ext_resource type="Texture2D" uid="uid://qtcck02xg2yr" path="res://addons/rain/petal2.png" id="2_moo4x"]
+[ext_resource type="PackedScene" uid="uid://b6aacbl7t5yu6" path="res://stages/world_1/gfx/rain/cherry_rain2.tscn" id="2_wdwxf"]
+[ext_resource type="Material" uid="uid://3omye8dfixmd" path="res://addons/rain/cherry_petal.tres" id="3_1fnv7"]
+[ext_resource type="Texture2D" uid="uid://d2670kc1yl25i" path="res://addons/rain/petal1.png" id="4_1fnv7"]
+
+[node name="CherryblossomRain" type="Node2D"]
+z_index = 1
+
+[node name="Cherry Fall Small" parent="." instance=ExtResource("1_qyshs")]
+amount = 800
+texture = ExtResource("2_moo4x")
+visibility_rect = Rect2(0, -384, 7200, 1024)
+process_material = ExtResource("3_1fnv7")
+
+[node name="Cherry Fall" parent="." instance=ExtResource("2_wdwxf")]
+amount = 1000
+texture = ExtResource("4_1fnv7")
+visibility_rect = Rect2(0, -384, 7200, 1024)
+process_material = ExtResource("3_1fnv7")

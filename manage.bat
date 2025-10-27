@@ -35,11 +35,9 @@ if /i "%userInput%"=="1" (
   echo [95mPerforming resets...[0m
   echo(
   echo [95mProject:[0m
-  git add .
   git reset --hard
   cd engine
   echo [95mEngine:[0m
-  git add .
   git reset --hard
   cd ..
 
@@ -76,7 +74,6 @@ if /i "%userInput%"=="1" (
 
   echo [95mPerforming resets...[0m
   echo(
-  git add .
   git reset --hard
 
   echo(
@@ -101,7 +98,6 @@ if /i "%userInput%"=="1" (
   echo [95mPerforming engine reset...[0m
   echo(
   cd engine
-  git add .
   git reset --hard
   cd ..
 

@@ -1,0 +1,333 @@
+[gd_scene load_steps=41 format=4 uid="uid://bgxol88iagsen"]
+
+[ext_resource type="Script" uid="uid://dh7ob1sbo8lx7" path="res://engine/scripts/classes/level/level.gd" id="1_7hk8a"]
+[ext_resource type="AudioStream" uid="uid://d3pkf2n3lktav" path="res://stages/world_1/music/bowser_win.ogg" id="2_jhe7p"]
+[ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="3_l34pl"]
+[ext_resource type="AudioStream" uid="uid://b4bjb1ov0dt26" path="res://stages/world_1/music/before_boss_room.it" id="4_bait7"]
+[ext_resource type="PackedScene" uid="uid://1do11cr84k7y" path="res://engine/objects/players/player.tscn" id="5_ovtjb"]
+[ext_resource type="Script" uid="uid://cugmax5psc2oo" path="res://engine/objects/players/player_camera_2d.gd" id="6_dol6f"]
+[ext_resource type="PackedScene" uid="uid://yqftjpfskche" path="res://engine/components/cam_area/cam_area.tscn" id="7_8r1fc"]
+[ext_resource type="PackedScene" uid="uid://ugxjxrdao5el" path="res://engine/components/hud/hud.tscn" id="8_cu4yr"]
+[ext_resource type="Script" uid="uid://bp102w8k4osu2" path="res://addons/yuureiki_tweaks/tweak_hud.gd" id="8_pudke"]
+[ext_resource type="FontFile" uid="uid://dod5x6pna7fub" path="res://engine/fonts/comix_heavy.ttf" id="9_jatfc"]
+[ext_resource type="FontFile" uid="uid://b1pi0t5byork2" path="res://engine/components/hud/hud_font.fnt" id="10_net8w"]
+[ext_resource type="Texture2D" uid="uid://dmuql4ck05gvo" path="res://stages/world_1/level textures/castle_bg.png" id="11_f0enx"]
+[ext_resource type="Texture2D" uid="uid://djwe62jh83kf" path="res://engine/tilesets/overworld/hard_block.png" id="11_l1i77"]
+[ext_resource type="Texture2D" uid="uid://djeepjjheqxl" path="res://engine/tilesets/castle/castle_tileset.png" id="12_6ri0s"]
+[ext_resource type="Texture2D" uid="uid://nwyeqno7oote" path="res://engine/tilesets/castle/gray_platform_tile.png" id="13_fcoua"]
+[ext_resource type="Material" uid="uid://cwwy5x5gqv5mx" path="res://engine/shaders/add_effect.tres" id="15_bait7"]
+[ext_resource type="Texture2D" uid="uid://bwwjhg1l4hmdq" path="res://stages/world_1/level textures/door_bg.png" id="15_jatfc"]
+[ext_resource type="PackedScene" uid="uid://b8q8ngpgfgjl5" path="res://engine/objects/bosses/bowser/bowser.tscn" id="16_l1i77"]
+[ext_resource type="PackedScene" uid="uid://bq45lxt7bqoma" path="res://engine/objects/bosses/bowser/bowser_edge.tscn" id="17_6ri0s"]
+[ext_resource type="PackedScene" uid="uid://b7tkooebfam48" path="res://engine/objects/bumping_blocks/question_block/templates/Fire Flower Question Block.tscn" id="17_cu4yr"]
+[ext_resource type="PackedScene" uid="uid://cx0wdn3m2f25y" path="res://engine/objects/bosses/bowser/bowser_lava_template.tscn" id="18_fcoua"]
+[ext_resource type="PackedScene" uid="uid://b71msw28e37a" path="res://engine/objects/powerups/red_mushroom/red_mushroom.tscn" id="18_jatfc"]
+[ext_resource type="AudioStream" uid="uid://bm6en8bw5vv0v" path="res://stages/world_1/music/onigashima.ogg" id="18_pudke"]
+[ext_resource type="PackedScene" uid="uid://bsdcxwngf5hru" path="res://engine/objects/powerups/fire_flower/fire_flower.tscn" id="19_net8w"]
+[ext_resource type="Script" uid="uid://chvjy6okoognf" path="res://engine/objects/powerups/instance_powerup.gd" id="20_l1i77"]
+[ext_resource type="PackedScene" uid="uid://diivlwjl0y1i7" path="res://engine/objects/bosses/bowser/bowser_trigger.tscn" id="24_6ri0s"]
+[ext_resource type="PackedScene" uid="uid://dq5xy4p67ikx8" path="res://stages/world_1/level objects/castle_pillar.tscn" id="25_fcoua"]
+[ext_resource type="PackedScene" uid="uid://0bgg2kpoab0a" path="res://stages/world_1/gfx/rain/rain_with_scrolling.tscn" id="28_34her"]
+[ext_resource type="PackedScene" uid="uid://c5s3uwx77gvab" path="res://modules/music_overlay/music_overlay.tscn" id="29_5i5qd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45ioh"]
+texture = ExtResource("11_l1i77")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlhg2"]
+texture = ExtResource("12_6ri0s")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(2, 1)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-16, 0)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 48, -16, 48, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/size_in_atlas = Vector2i(2, 1)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(-16, 0)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 48, -16, 48, 16, -16, 16)
+2:1/size_in_atlas = Vector2i(2, 1)
+2:1/0 = 0
+2:1/0/texture_origin = Vector2i(-16, 0)
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 48, -16, 48, 16, -16, 16)
+0:2/size_in_atlas = Vector2i(2, 1)
+0:2/0 = 0
+0:2/0/texture_origin = Vector2i(-16, 0)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 48, -16, 48, 16, -16, 16)
+2:2/size_in_atlas = Vector2i(2, 1)
+2:2/0 = 0
+2:2/0/texture_origin = Vector2i(-16, 0)
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 48, -16, 48, 16, -16, 16)
+0:3/size_in_atlas = Vector2i(2, 1)
+0:3/0 = 0
+0:3/0/texture_origin = Vector2i(-16, 0)
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 48, -16, 48, 16, -16, 16)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wo4w7"]
+texture = ExtResource("13_fcoua")
+0:0/size_in_atlas = Vector2i(2, 1)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 0)
+
+[sub_resource type="TileSet" id="TileSet_aq0co"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 112
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Grassland"
+terrain_set_0/terrain_0/color = Color(1, 1, 1, 1)
+sources/0 = SubResource("TileSetAtlasSource_45ioh")
+sources/5 = SubResource("TileSetAtlasSource_rlhg2")
+sources/6 = SubResource("TileSetAtlasSource_wo4w7")
+
+[sub_resource type="Gradient" id="Gradient_4mqjo"]
+colors = PackedColorArray(0, 0, 0, 1, 0.235294, 0, 0.282353, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8vs8l"]
+gradient = SubResource("Gradient_4mqjo")
+width = 640
+height = 480
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Curve2D" id="Curve2D_6ri0s"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -608, -288, 0, 0, 0, 0, 16, 16)
+}
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_bait7"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ovtjb"]
+gradient = SubResource("Gradient_bait7")
+width = 640
+height = 480
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Resource" id="Resource_6ri0s"]
+resource_local_to_scene = true
+script = ExtResource("20_l1i77")
+creation_fallback_node = ExtResource("18_jatfc")
+creation_nodepack = ExtResource("19_net8w")
+creation_force_sibling = false
+trans_offset = Vector2(0, 0)
+trans_inheritances = 7
+trans_rotation = 0.0
+trans_scale = Vector2(1, 1)
+trans_skew = 0.0
+visi_z_index = 0
+visi_z_as_relative = true
+visi_y_sort_enabled = false
+custom_vars = {}
+
+[sub_resource type="Resource" id="Resource_fcoua"]
+resource_local_to_scene = true
+script = ExtResource("20_l1i77")
+creation_fallback_node = ExtResource("18_jatfc")
+creation_nodepack = ExtResource("19_net8w")
+creation_force_sibling = false
+trans_offset = Vector2(0, 0)
+trans_inheritances = 7
+trans_rotation = 0.0
+trans_scale = Vector2(1, 1)
+trans_skew = 0.0
+visi_z_index = 0
+visi_z_as_relative = true
+visi_y_sort_enabled = false
+custom_vars = {}
+
+[node name="WinterManorBoss" type="Node2D"]
+editor_description = "Enter map scene path in the \"Jump to Scene\" property here."
+script = ExtResource("1_7hk8a")
+time = 200
+completion_music = ExtResource("2_jhe7p")
+completion_write_save = false
+jump_to_scene = "uid://nbyxot4cemcw"
+
+[node name="MusicLoader" parent="." instance=ExtResource("3_l34pl")]
+music = Array[Resource]([ExtResource("4_bait7")])
+volume_db = Array[float]([0.0])
+start_from_sec = Array[float]([0.0])
+
+[node name="Player" parent="." instance=ExtResource("5_ovtjb")]
+position = Vector2(144, 400)
+
+[node name="PlayerCamera2D" type="Camera2D" parent="."]
+editor_draw_screen = false
+script = ExtResource("6_dol6f")
+metadata/_edit_lock_ = true
+
+[node name="CameraArea" parent="." instance=ExtResource("7_8r1fc")]
+offset_right = 1888.0
+offset_bottom = 480.0
+metadata/_edit_lock_ = true
+
+[node name="HUD" parent="." instance=ExtResource("8_cu4yr")]
+script = ExtResource("8_pudke")
+
+[node name="WorldLabel" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_left = 0.65
+anchor_right = 0.65
+offset_left = -70.0
+offset_top = 7.0
+offset_right = 73.0
+offset_bottom = 52.0
+grow_horizontal = 2
+pivot_offset = Vector2(0, 9)
+size_flags_horizontal = 0
+theme_override_colors/font_outline_color = Color(7.94157e-07, 0, 0.413349, 1)
+theme_override_constants/line_spacing = -7
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("9_jatfc")
+theme_override_font_sizes/font_size = 22
+text = "HINTERLAND
+MANOR"
+horizontal_alignment = 1
+
+[node name="WorldLabel2" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_left = 0.65
+anchor_right = 0.65
+offset_left = -85.0
+offset_top = 51.0
+offset_right = 88.0
+offset_bottom = 69.0
+grow_horizontal = 2
+pivot_offset = Vector2(0, 9)
+size_flags_horizontal = 0
+theme_override_colors/font_outline_color = Color(7.94157e-07, 0, 0.413349, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_net8w")
+theme_override_font_sizes/font_size = 16
+text = "BOSS CHAMBER"
+horizontal_alignment = 1
+
+[node name="Ground TileMap" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAAABQAAAAAAAAAAAAEABQAAAAAAAAABAAIABQAAAAAAAAAAAAMABQAAAAAAAAABAAQABQAAAAAAAAAAAAUABQAAAAAAAAABAAYABQAAAAAAAAAAAAcABQAAAAAAAAABAAgABQAAAAAAAAAAAAkABQAAAAAAAAABAAoABQAAAAAAAAAAAAsABQAAAAAAAAABAAwABQAAAAAAAAAAAA0ABQAAAAAAAAABAA4ABQAAAAAAAAACAA0ABQAAAAAAAAADAA4ABQAAAAAAAAAEAA0ABQAAAAAAAAAGAA0ABQAAAAAAAAAHAA4ABQAAAAAAAAAFAA4ABQAAAAAAAAAAAA4ABQACAAQAAAAAAAwABQACAAQAAAAAAAoABQACAAQAAAAAAAgABQACAAQAAAAAAAYABQACAAQAAAAAAAQABQACAAQAAAAAAAIABQACAAQAAAAAAAAABQACAAQAAAACAPb/BQACAAQAAAABAPf/BQACAAQAAAACAPj/BQACAAQAAAABAPn/BQACAAQAAAACAPr/BQACAAQAAAABAPv/BQACAAQAAAACAPz/BQACAAQAAAACAP7/BQACAAQAAAABAP3/BQACAAQAAAABAP//BQACAAQAAAAPAA4ABQAAAAAAAAARAA4ABQAAAAAAAAATAA4ABQAAAAAAAAAQAA0ABQAAAAAAAAASAA0ABQAAAAAAAAAPAAwABQAAAAAAAAARAAwABQAAAAAAAAATAAwABQAAAAAAAAAQAAsABQAAAAAAAAASAAsABQAAAAAAAAAPAAoABQAAAAAAAAAPAAgABQAAAAAAAAARAAgABQAAAAAAAAARAAoABQAAAAAAAAATAAoABQAAAAAAAAATAAgABQAAAAAAAAAQAAkABQAAAAAAAAASAAkABQAAAAAAAAAbAAgABQAAAAAAAAAdAAgABQAAAAAAAAAfAAgABQAAAAAAAAAhAAgABQAAAAAAAAAcAAcABQAAAAAAAAAeAAcABQAAAAAAAAAbAAYABQAAAAAAAAAdAAYABQAAAAAAAAAfAAYABQAAAAAAAAAcAAkABQAAAAAAAAAcAAsABQAAAAAAAAAcAA0ABQAAAAAAAAAbAAoABQAAAAAAAAAbAAwABQAAAAAAAAAbAA4ABQAAAAAAAAAdAA4ABQAAAAAAAAAdAAwABQAAAAAAAAAdAAoABQAAAAAAAAAeAAkABQAAAAAAAAAgAAkABQAAAAAAAAAhAAoABQAAAAAAAAAfAAoABQAAAAAAAAAeAAsABQAAAAAAAAAgAAsABQAAAAAAAAAiAAsABQAAAAAAAAAfAAwABQAAAAAAAAAeAA0ABQAAAAAAAAAfAA4ABQAAAAAAAAAgAA0ABQAAAAAAAAAhAA4ABQAAAAAAAAAhAAwABQAAAAAAAAAiAA0ABQAAAAAAAAAjAA4ABQAAAAAAAAAjAAwABQAAAAAAAAAjAAoABQAAAAAAAAAlAAwABQAAAAEAAAAlAA4ABQAAAAEAAAAlAA0ABQAAAAIAAAAkAA0ABQABAAQAAAAnAAwABQAAAAAAAAApAAwABQAAAAAAAAArAAwABQAAAAAAAAAtAAwABQAAAAAAAAAvAAwABQAAAAAAAAAxAAwABQAAAAAAAAAzAAwABQAAAAAAAAA1AAwABQAAAAAAAAA3AAwABQAAAAAAAAA5AAwABQAAAAAAAAA4AA0ABQAAAAAAAAA2AA0ABQAAAAAAAAA0AA0ABQAAAAAAAAAyAA0ABQAAAAAAAAAwAA0ABQAAAAAAAAAuAA0ABQAAAAAAAAAsAA0ABQAAAAAAAAAqAA0ABQAAAAAAAAAoAA0ABQAAAAAAAAAnAA4ABQAAAAAAAAApAA4ABQAAAAAAAAArAA4ABQAAAAAAAAAtAA4ABQAAAAAAAAAvAA4ABQAAAAAAAAAxAA4ABQAAAAAAAAAzAA4ABQAAAAAAAAA1AA4ABQAAAAAAAAA3AA4ABQAAAAAAAAA5AA4ABQAAAAAAAAAnAA0ABQACAAAAAAA6AA0ABQABAAQAAAA7AAwAAAAAAAAAAAA8AAwAAAAAAAAAAAA9AAwAAAAAAAAAAAA9AAsAAAAAAAAAAAA9AAoAAAAAAAAAAAA9AAkAAAAAAAAAAAA9AAgAAAAAAAAAAAA9AAcAAAAAAAAAAAA9AAYAAAAAAAAAAAA9AAUAAAAAAAAAAAA9AAQAAAAAAAAAAAA9AAMAAAAAAAAAAAA9AAIAAAAAAAAAAAA9AAEAAAAAAAAAAAA9AAAAAAAAAAAAAAA9AP//AAAAAAAAAAA9AP7/AAAAAAAAAAA9AP3/AAAAAAAAAAA9APz/AAAAAAAAAAA9APv/AAAAAAAAAAA9APr/AAAAAAAAAAA9APn/AAAAAAAAAAA9APj/AAAAAAAAAAA9APf/AAAAAAAAAAA9APb/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_aq0co")
+
+[node name="Background Objects" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background Objects"]
+
+[node name="BG" type="Sprite2D" parent="Background Objects/ParallaxBackground"]
+texture = SubResource("GradientTexture2D_8vs8l")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Background Objects"]
+z_index = -2
+offset_top = 248.0
+offset_right = 2912.0
+offset_bottom = 480.0
+texture = ExtResource("11_f0enx")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Background Objects"]
+z_index = -1
+position = Vector2(144, 384)
+texture = ExtResource("15_jatfc")
+
+[node name="CastlePillar" parent="Background Objects" instance=ExtResource("25_fcoua")]
+z_index = -1
+position = Vector2(1296, 192)
+metadata/_edit_lock_ = true
+
+[node name="CastlePillar2" parent="Background Objects" instance=ExtResource("25_fcoua")]
+z_index = -1
+position = Vector2(1840, 192)
+metadata/_edit_lock_ = true
+
+[node name="CastlePillar3" parent="Background Objects" instance=ExtResource("25_fcoua")]
+z_index = -1
+position = Vector2(1472, 192)
+metadata/_edit_lock_ = true
+
+[node name="CastlePillar4" parent="Background Objects" instance=ExtResource("25_fcoua")]
+z_index = -1
+position = Vector2(1664, 192)
+metadata/_edit_lock_ = true
+
+[node name="CastlePillar5" parent="Background Objects" instance=ExtResource("25_fcoua")]
+z_index = -1
+position = Vector2(208, 208)
+scale = Vector2(1, 1.08333)
+metadata/_edit_lock_ = true
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="BowserTrigger" parent="Enemies" node_paths=PackedStringArray("trigger_bowser") instance=ExtResource("24_6ri0s")]
+position = Vector2(1584, 240)
+curve = SubResource("Curve2D_6ri0s")
+trigger_bowser = NodePath("../Bowser")
+boss_music = ExtResource("18_pudke")
+metadata/_edit_lock_ = true
+
+[node name="Bowser" parent="Enemies" instance=ExtResource("16_l1i77")]
+position = Vector2(1728, 352)
+health = 12
+hardness = 6
+jumping_chance = 0.06
+y_offset = 10
+speed = Vector2(300, 0)
+metadata/_edit_lock_ = true
+
+[node name="BowserEdge" parent="Enemies" instance=ExtResource("17_6ri0s")]
+position = Vector2(1904, 144)
+metadata/_edit_lock_ = true
+
+[node name="BowserEdge2" parent="Enemies" instance=ExtResource("17_6ri0s")]
+position = Vector2(1232, 144)
+metadata/_edit_lock_ = true
+
+[node name="LavaBowser" parent="Enemies" instance=ExtResource("18_fcoua")]
+position = Vector2(1264, 432)
+metadata/_edit_lock_ = true
+
+[node name="LavaBowser2" parent="Enemies" instance=ExtResource("18_fcoua")]
+position = Vector2(1744, 432)
+metadata/_edit_lock_ = true
+
+[node name="Stuff" type="Node" parent="."]
+
+[node name="LavaLighting" type="Sprite2D" parent="Stuff"]
+material = ExtResource("15_bait7")
+position = Vector2(1248, 352)
+scale = Vector2(1, 0.233333)
+texture = SubResource("GradientTexture2D_ovtjb")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="QuestionBlockFireFlower" parent="Stuff" instance=ExtResource("17_cu4yr")]
+position = Vector2(112, 272)
+result = SubResource("Resource_6ri0s")
+
+[node name="QuestionBlockFireFlower2" parent="Stuff" instance=ExtResource("17_cu4yr")]
+position = Vector2(112, 144)
+result = SubResource("Resource_fcoua")
+
+[node name="Rain" parent="." instance=ExtResource("28_34her")]
+position = Vector2(208, 0)
+visibility_rect = Rect2(0, 0, 1776, 480)
+
+[node name="MusicOverlay" parent="." instance=ExtResource("29_5i5qd")]
+text = Array[String](["In the Boss Room - Koji Kondo", "The Fabled Land of Onigashima ~ Missing Power - Jun'ya Ota (ZUN)"])
+
+[connection signal="bowser_triggered" from="Enemies/BowserTrigger" to="MusicOverlay" method="_on_bowser_trigger_bowser_triggered"]

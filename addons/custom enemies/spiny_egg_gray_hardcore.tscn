@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://ctlibbwkqerix"]
+
+[ext_resource type="PackedScene" uid="uid://hqhtm2y4woh0" path="res://engine/objects/enemies/spinies/spiny_egg_red.tscn" id="1_uw155"]
+[ext_resource type="PackedScene" uid="uid://crb8jkwa0r1dl" path="res://engine/objects/enemies/spinies/spiny_iron.tscn" id="2_xdm5j"]
+[ext_resource type="Script" uid="uid://bm81fg3h4j8sj" path="res://engine/scripts/resources/instance_node2d/instance_node2d.gd" id="3_qfiuo"]
+[ext_resource type="PackedScene" uid="uid://oe7i3cief0g" path="res://engine/objects/enemies/_dead/enemy_killed.tscn" id="4_prkdu"]
+[ext_resource type="Script" uid="uid://du32vchaulqj6" path="res://engine/objects/enemies/_dead/prefabs/do_killed.gd" id="5_w8c3q"]
+[ext_resource type="Texture2D" uid="uid://d1jbm8y8rv52c" path="res://addons/custom enemies/gray_egg_hardcore.png" id="6_fvnqk"]
+[ext_resource type="Texture2D" uid="uid://6jvnknfhxi0m" path="res://engine/objects/enemies/spinies/textures/spiny_iron.png" id="7_xdm5j"]
+
+[sub_resource type="Resource" id="Resource_wwk28"]
+script = ExtResource("3_qfiuo")
+creation_nodepack = ExtResource("2_xdm5j")
+creation_force_sibling = false
+trans_offset = Vector2(0, 0)
+trans_inheritances = 7
+trans_rotation = 0.0
+trans_scale = Vector2(1, 1)
+trans_skew = 0.0
+visi_z_index = 0
+visi_z_as_relative = true
+visi_y_sort_enabled = false
+custom_vars = {}
+
+[sub_resource type="Resource" id="Resource_edcu0"]
+resource_local_to_scene = true
+script = ExtResource("3_qfiuo")
+creation_nodepack = ExtResource("4_prkdu")
+creation_force_sibling = false
+trans_offset = Vector2(0, 0)
+trans_inheritances = 7
+trans_rotation = 0.0
+trans_scale = Vector2(1, 1)
+trans_skew = 0.0
+visi_z_index = 2
+visi_z_as_relative = true
+visi_y_sort_enabled = false
+custom_vars = {
+"death": NodePath("../../Sprite/Killed"),
+"death_speed": Vector2(0, -250)
+}
+custom_script = ExtResource("5_w8c3q")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gegbu"]
+atlas = ExtResource("6_fvnqk")
+region = Rect2(0, 0, 30, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_otqsp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gegbu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfiuo"]
+atlas = ExtResource("7_xdm5j")
+region = Rect2(0, 33, 31, 31)
+
+[node name="SpinyRedEggHardcore" instance=ExtResource("1_uw155")]
+spiny_creation = SubResource("Resource_wwk28")
+rotation_speed = 11.25
+free_offscreen = true
+gravity_scale = 0.3
+
+[node name="Collision" parent="." index="0"]
+visible = false
+
+[node name="EnemyAttacked" parent="Body" index="1"]
+killing_creation = SubResource("Resource_edcu0")
+
+[node name="Sprite" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_otqsp")
+
+[node name="Killed" parent="Sprite" index="0"]
+texture = SubResource("AtlasTexture_qfiuo")

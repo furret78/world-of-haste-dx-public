@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8owm8sf3iihe"]
+
+[ext_resource type="Texture2D" uid="uid://ba571fq8ggb4q" path="res://stages/world_1/level textures/cherry_back.png" id="1_2qqf0"]
+
+[node name="CherryBg" type="TextureRect"]
+texture = ExtResource("1_2qqf0")

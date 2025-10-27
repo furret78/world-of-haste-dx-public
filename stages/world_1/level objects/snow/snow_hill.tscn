@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr6w8t6eme82s"]
+
+[ext_resource type="Texture2D" uid="uid://2rc5swrdvmf0" path="res://stages/world_1/level textures/snow_hill.png" id="1_mbh0v"]
+
+[node name="Snow Hill" type="Sprite2D"]
+texture = ExtResource("1_mbh0v")

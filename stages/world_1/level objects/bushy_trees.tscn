@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxiw56sjj8vxb"]
+
+[ext_resource type="Texture2D" uid="uid://bnb5am431a3u8" path="res://engine/tilesets/overworld/woods.png" id="1_d3gku"]
+
+[node name="BushyTrees" type="Sprite2D"]
+texture = ExtResource("1_d3gku")

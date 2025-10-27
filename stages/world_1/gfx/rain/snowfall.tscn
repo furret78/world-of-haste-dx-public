@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr46yi06dj5h7"]
+
+[ext_resource type="PackedScene" uid="uid://dw0wrbt8k1tph" path="res://stages/world_1/gfx/rain/snow_with_scrolling.tscn" id="1_afyjq"]
+[ext_resource type="Texture2D" uid="uid://dqiniq1e4ye2q" path="res://stages/world_1/gfx/rain/snowflake2.png" id="2_chgw6"]
+
+[node name="Snowfall" type="Node2D"]
+
+[node name="Snow" parent="." instance=ExtResource("1_afyjq")]
+amount = 3000
+visibility_rect = Rect2(0, 0, 14624, 480)
+
+[node name="Snow2" parent="." instance=ExtResource("1_afyjq")]
+amount = 2750
+texture = ExtResource("2_chgw6")
+visibility_rect = Rect2(0, 0, 14624, 480)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://4reqpfqbwsku"]
+
+[ext_resource type="PackedScene" uid="uid://dbvicqhnexj1c" path="res://stages/world_1/gfx/rain/cherry_rain.tscn" id="1_qf14o"]
+[ext_resource type="PackedScene" uid="uid://b6aacbl7t5yu6" path="res://stages/world_1/gfx/rain/cherry_rain2.tscn" id="2_k4ymh"]
+[ext_resource type="Script" uid="uid://bqb5d85w1tkb5" path="res://stages/world_1/gfx/rain/cherry.gd" id="3_k4ymh"]
+
+[node name="CherryblossomRain" type="Node2D"]
+z_index = 1
+
+[node name="Cherry Fall Small" parent="." instance=ExtResource("1_qf14o")]
+amount = 1800
+visibility_rect = Rect2(0, -384, 14592, 1024)
+
+[node name="Cherry Fall" parent="." instance=ExtResource("2_k4ymh")]
+amount = 2000
+visibility_rect = Rect2(0, -384, 14592, 1024)
+script = ExtResource("3_k4ymh")

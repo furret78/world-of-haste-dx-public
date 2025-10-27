@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://i5gqlc1n4llg"]
+
+[ext_resource type="Texture2D" uid="uid://dgmv86fdw6lwq" path="res://addons/rain/raindrop.png" id="1_6p3al"]
+[ext_resource type="Material" uid="uid://dm2vhdy5auc6i" path="res://stages/world_1/gfx/rain/raindrop.tres" id="2_posn5"]
+[ext_resource type="Script" uid="uid://bmt8qymufeabw" path="res://stages/world_1/gfx/rain/rain.gd" id="3_yxyfu"]
+[ext_resource type="AudioStream" uid="uid://dolagb7nb82q8" path="res://addons/rain/rain_loop.mp3" id="4_posn5"]
+
+[node name="Rain" type="GPUParticles2D"]
+amount = 400
+texture = ExtResource("1_6p3al")
+lifetime = 0.5
+preprocess = 15.0
+randomness = 0.5
+visibility_rect = Rect2(-160, -384, 960, 1024)
+process_material = ExtResource("2_posn5")
+script = ExtResource("3_yxyfu")
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_posn5")
+volume_db = 24.0
+autoplay = true
+bus = &"Sound"

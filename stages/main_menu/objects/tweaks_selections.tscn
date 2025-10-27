@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://kiw6yxeov3fj"]
+[gd_scene load_steps=40 format=3 uid="uid://kiw6yxeov3fj"]
 
 [ext_resource type="Script" uid="uid://cn67joohcklbn" path="res://engine/components/ui/generic/menu_items_controller.gd" id="1_e1b0h"]
 [ext_resource type="Script" uid="uid://tt1f58jc38ld" path="res://stages/main_menu/scripts/tweak_category_sel.gd" id="2_2sf4t"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://beysu21c0vky3" path="res://stages/main_menu/scripts/minix_selectors_anim.gd" id="5_dhfy0"]
 [ext_resource type="Texture2D" uid="uid://byetryv2ltxkl" path="res://stages/main_menu/textures/check-mark-check.png" id="5_fjyvq"]
 [ext_resource type="Script" uid="uid://b2fxpfbja6b7u" path="res://stages/main_menu/scripts/tweak_skin_selector.gd" id="6_n68nh"]
+[ext_resource type="Script" uid="uid://3v1bhxfc7ruk" path="res://stages/main_menu/scripts/tweak_warp_anim.gd" id="11_p2vnn"]
 [ext_resource type="Script" uid="uid://cfbbqpbg8evf4" path="res://stages/main_menu/scripts/tweak_cursor_custom.gd" id="12_w1vvf"]
 [ext_resource type="Script" uid="uid://cl31gyhukew6s" path="res://engine/components/ui/generic/menu_selector.gd" id="15_lbl8e"]
 [ext_resource type="SpriteFrames" uid="uid://br3qktscdu8fx" path="res://engine/objects/players/prefabs/animations/mario/selector.tres" id="16_4e6sj"]
@@ -58,6 +59,11 @@ resource_local_to_scene = true
 atlas = ExtResource("5_fjyvq")
 region = Rect2(0, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xore"]
+resource_local_to_scene = true
+atlas = ExtResource("5_fjyvq")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yh062"]
 resource_local_to_scene = true
 atlas = ExtResource("5_fjyvq")
@@ -79,6 +85,21 @@ atlas = ExtResource("5_fjyvq")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tt5wk"]
+resource_local_to_scene = true
+atlas = ExtResource("5_fjyvq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2vnn"]
+resource_local_to_scene = true
+atlas = ExtResource("5_fjyvq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yorwq"]
+resource_local_to_scene = true
+atlas = ExtResource("5_fjyvq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkqo3"]
 resource_local_to_scene = true
 atlas = ExtResource("5_fjyvq")
 region = Rect2(0, 0, 16, 16)
@@ -756,6 +777,45 @@ size_flags_horizontal = 10
 texture = SubResource("AtlasTexture_lobhh")
 stretch_mode = 2
 
+[node name="HBoxContainer7" type="HBoxContainer" parent="Gameplay"]
+layout_mode = 2
+script = ExtResource("3_pxu1a")
+tweak_name = "faster_timer"
+tweak_description = "enabling this allows the time score calculation at the end of a level to be faster"
+selected_sound = ExtResource("3_ltw82")
+
+[node name="Label" type="Label" parent="Gameplay/HBoxContainer7"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_5xeuf")
+theme_override_font_sizes/font_size = 12
+text = "faster end-level timer"
+uppercase = true
+
+[node name="Toggle" type="TextureRect" parent="Gameplay/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_1xore")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Gameplay/HBoxContainer7/Toggle"]
+modulate = Color(0, 0, 0, 0.462745)
+z_index = -1
+layout_mode = 2
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 19.0
+offset_bottom = 19.0
+size_flags_horizontal = 10
+texture = SubResource("AtlasTexture_lobhh")
+stretch_mode = 2
+
 [node name="Exit" type="HBoxContainer" parent="Gameplay"]
 layout_mode = 2
 size_flags_vertical = 10
@@ -1005,6 +1065,124 @@ texture = SubResource("AtlasTexture_tt5wk")
 stretch_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="Aesthetic/HBoxContainer17/Toggle"]
+modulate = Color(0, 0, 0, 0.462745)
+z_index = -1
+layout_mode = 2
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 19.0
+offset_bottom = 19.0
+size_flags_horizontal = 10
+texture = SubResource("AtlasTexture_lobhh")
+stretch_mode = 2
+
+[node name="HBoxContainer18" type="HBoxContainer" parent="Aesthetic"]
+layout_mode = 2
+script = ExtResource("11_p2vnn")
+tweak_name = "player_warp_anim"
+tweak_description = "forces the use of warp animations used in traditional mario forever e.g. crouching animation when entering a pipe from above"
+selected_sound = ExtResource("3_ltw82")
+
+[node name="Label" type="Label" parent="Aesthetic/HBoxContainer18"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_5xeuf")
+theme_override_font_sizes/font_size = 12
+text = "enable old warp animations"
+uppercase = true
+
+[node name="Toggle" type="TextureRect" parent="Aesthetic/HBoxContainer18"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_p2vnn")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Aesthetic/HBoxContainer18/Toggle"]
+modulate = Color(0, 0, 0, 0.462745)
+z_index = -1
+layout_mode = 2
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 19.0
+offset_bottom = 19.0
+size_flags_horizontal = 10
+texture = SubResource("AtlasTexture_lobhh")
+stretch_mode = 2
+
+[node name="HBoxContainer19" type="HBoxContainer" parent="Aesthetic"]
+layout_mode = 2
+script = ExtResource("3_pxu1a")
+tweak_name = "player_check_sfx"
+tweak_description = "enables the checkpoint activation sound effect used in traditional mario forever instead of the new one"
+selected_sound = ExtResource("3_ltw82")
+
+[node name="Label" type="Label" parent="Aesthetic/HBoxContainer19"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_5xeuf")
+theme_override_font_sizes/font_size = 12
+text = "enable old checkpoint sound effect"
+uppercase = true
+
+[node name="Toggle" type="TextureRect" parent="Aesthetic/HBoxContainer19"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_yorwq")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Aesthetic/HBoxContainer19/Toggle"]
+modulate = Color(0, 0, 0, 0.462745)
+z_index = -1
+layout_mode = 2
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 19.0
+offset_bottom = 19.0
+size_flags_horizontal = 10
+texture = SubResource("AtlasTexture_lobhh")
+stretch_mode = 2
+
+[node name="HBoxContainer20" type="HBoxContainer" parent="Aesthetic"]
+layout_mode = 2
+script = ExtResource("3_pxu1a")
+tweak_name = "alt_win_theme"
+default_value = true
+tweak_description = "enables an alternative victory theme for the goalpost. this is similar to the victory theme used in the original release of world of haste"
+selected_sound = ExtResource("3_ltw82")
+
+[node name="Label" type="Label" parent="Aesthetic/HBoxContainer20"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_5xeuf")
+theme_override_font_sizes/font_size = 12
+text = "enable alternative goalpost theme"
+uppercase = true
+
+[node name="Toggle" type="TextureRect" parent="Aesthetic/HBoxContainer20"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_gkqo3")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Aesthetic/HBoxContainer20/Toggle"]
 modulate = Color(0, 0, 0, 0.462745)
 z_index = -1
 layout_mode = 2

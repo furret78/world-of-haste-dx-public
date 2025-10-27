@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://c38r64e77fvng"]
+
+[ext_resource type="Texture2D" uid="uid://bmasn65vobox6" path="res://engine/tilesets/overworld/tree_animated.png" id="1_qo6wn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g1gf"]
+atlas = ExtResource("1_qo6wn")
+region = Rect2(0, 0, 36, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhued"]
+atlas = ExtResource("1_qo6wn")
+region = Rect2(36, 0, 36, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25b7g"]
+atlas = ExtResource("1_qo6wn")
+region = Rect2(72, 0, 36, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jusf"]
+atlas = ExtResource("1_qo6wn")
+region = Rect2(108, 0, 36, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlfad"]
+atlas = ExtResource("1_qo6wn")
+region = Rect2(144, 0, 36, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83oc8"]
+atlas = ExtResource("1_qo6wn")
+region = Rect2(180, 0, 36, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iveuh"]
+atlas = ExtResource("1_qo6wn")
+region = Rect2(216, 0, 36, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqugp"]
+atlas = ExtResource("1_qo6wn")
+region = Rect2(252, 0, 36, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57y3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g1gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhued")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25b7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jusf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlfad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83oc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iveuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqugp")
+}],
+"loop": true,
+"name": &"bouncy tree",
+"speed": 15.0
+}]
+
+[node name="BouncyTree" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_57y3v")
+animation = &"bouncy tree"
+autoplay = "bouncy tree"
+frame_progress = 0.889246

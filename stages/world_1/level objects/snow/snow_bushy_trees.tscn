@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3lvckcqr5gmw"]
+
+[ext_resource type="Texture2D" uid="uid://d3ooo3r7cx43w" path="res://stages/world_1/level textures/snow_bushy_trees.png" id="1_3g33d"]
+
+[node name="Snow Bushy Trees" type="Sprite2D"]
+position = Vector2(112, 25)
+texture = ExtResource("1_3g33d")

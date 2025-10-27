@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq5xy4p67ikx8"]
+
+[ext_resource type="Texture2D" uid="uid://bohpp03bjmuy" path="res://stages/world_1/level textures/castle_pillar.png" id="1_gg1m2"]
+
+[node name="CastlePillar" type="Sprite2D"]
+texture = ExtResource("1_gg1m2")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc28pai0wo8wi"]
+
+[ext_resource type="Texture2D" uid="uid://bxrtju4bs3pr6" path="res://engine/tilesets/overworld/hill.png" id="1_w2nig"]
+
+[node name="Hill" type="Sprite2D"]
+texture = ExtResource("1_w2nig")

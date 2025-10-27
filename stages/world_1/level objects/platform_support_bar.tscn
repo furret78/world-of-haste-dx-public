@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkukxl76k72km"]
+
+[ext_resource type="Texture2D" uid="uid://nwyeqno7oote" path="res://engine/tilesets/castle/gray_platform_tile.png" id="1_q7em1"]
+
+[node name="PlatformSupportBar" type="Node2D"]
+modulate = Color(0.366595, 0.366595, 0.366595, 1)
+rotation = -0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 8)
+texture = ExtResource("1_q7em1")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(80, 8)
+texture = ExtResource("1_q7em1")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(48, 8)
+texture = ExtResource("1_q7em1")
+metadata/_edit_lock_ = true

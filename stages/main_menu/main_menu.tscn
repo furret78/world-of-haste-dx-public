@@ -1,22 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://dsu3sit1o8qsd"]
+[gd_scene load_steps=17 format=3 uid="uid://dsu3sit1o8qsd"]
 
 [ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="1_t2ybe"]
 [ext_resource type="Script" uid="uid://cffbuf10b1ltt" path="res://stages/main_menu/scripts/main_menu.gd" id="1_wb5qn"]
-[ext_resource type="AudioStream" uid="uid://ckvsfjusfv75o" path="res://engine/scenes/main_menu/music/main_menu.xm" id="2_r0pvw"]
-[ext_resource type="Texture2D" uid="uid://usm6n80msr7n" path="res://engine/scenes/map/textures/bg.png" id="3_b1pty"]
+[ext_resource type="AudioStream" uid="uid://dyg3vv0yc1lkk" path="res://stages/world_1/music/title_menu.it" id="3_wb5qn"]
 [ext_resource type="Script" uid="uid://cl31gyhukew6s" path="res://engine/components/ui/generic/menu_selector.gd" id="4_frmaf"]
-[ext_resource type="Texture2D" uid="uid://cqkxqae2llw5e" path="res://stages/main_menu/textures/main_menu_bg.png" id="4_g2pwh"]
+[ext_resource type="Texture2D" uid="uid://c81dogtr43k0y" path="res://stages/main_menu/textures/title_map.png" id="4_jan3x"]
 [ext_resource type="Texture2D" uid="uid://c8wevmet4yyyk" path="res://stages/main_menu/textures/menu_items_bg.png" id="5_0ni4x"]
 [ext_resource type="SpriteFrames" uid="uid://br3qktscdu8fx" path="res://engine/objects/players/prefabs/animations/mario/selector.tres" id="5_x08ib"]
 [ext_resource type="PackedScene" uid="uid://bj1k76pyo26l" path="res://stages/main_menu/objects/main_menu_controls.tscn" id="6_6iew1"]
 [ext_resource type="Script" uid="uid://b1fji5ve3eoe0" path="res://engine/components/ui/generic/selector_player_animation.gd" id="6_521mh"]
 [ext_resource type="PackedScene" uid="uid://1jfyfq3ty6g1" path="res://engine/scenes/main_menu/settings.tscn" id="7_r3wt2"]
+[ext_resource type="Texture2D" uid="uid://2b13xgmx61ee" path="res://stages/main_menu/textures/logo_sub.png" id="8_8ei0a"]
 [ext_resource type="PackedScene" uid="uid://cpme7ixwwuc2p" path="res://engine/scenes/main_menu/controls.tscn" id="8_iq8be"]
+[ext_resource type="FontFile" uid="uid://bgsavu6joui2r" path="res://engine/fonts/junebug.ttf" id="8_jan3x"]
+[ext_resource type="Texture2D" uid="uid://dhx0ebkml11bm" path="res://stages/world_1/map textures/world.png" id="8_yb6nn"]
 [ext_resource type="PackedScene" uid="uid://c2mch7wqmlcgp" path="res://stages/main_menu/objects/tweaks.tscn" id="12_4lap8"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v54by"]
-atlas = ExtResource("3_b1pty")
-region = Rect2(0, 0, 1920, 480)
+[ext_resource type="PackedScene" uid="uid://dqca6lhqf6ccj" path="res://stages/main_menu/objects/music_room.tscn" id="18_yb6nn"]
 
 [node name="MainMenuExample" type="Control"]
 layout_mode = 3
@@ -43,7 +42,7 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="MusicLoader" parent="Menu" instance=ExtResource("1_t2ybe")]
-music = Array[Resource]([ExtResource("2_r0pvw")])
+music = Array[Resource]([ExtResource("3_wb5qn")])
 channel_id = 0
 
 [node name="Sprite2D" type="TextureRect" parent="Menu"]
@@ -53,17 +52,56 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_v54by")
+metadata/_edit_lock_ = true
 
 [node name="MainMenuBg" type="TextureRect" parent="Menu/Sprite2D"]
+z_index = -6
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_g2pwh")
+texture = ExtResource("4_jan3x")
 stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="TitleSub" type="TextureRect" parent="Menu/Sprite2D"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 246.0
+offset_right = 499.0
+offset_bottom = 298.0
+texture = ExtResource("8_yb6nn")
+
+[node name="DX" type="TextureRect" parent="Menu/Sprite2D/TitleSub"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 2.0
+offset_right = 581.0
+offset_bottom = 92.0
+texture = ExtResource("8_8ei0a")
+
+[node name="Credits" type="Label" parent="Menu/Sprite2D"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_right = 0.35
+offset_left = 114.0
+offset_top = 426.0
+offset_right = 401.0
+offset_bottom = 470.0
+grow_horizontal = 2
+pivot_offset = Vector2(0, 9)
+size_flags_horizontal = 0
+theme_override_colors/font_outline_color = Color(7.94157e-07, 0, 0.413349, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_jan3x")
+theme_override_font_sizes/font_size = 17
+text = "VERSION 1.3
+YAOLINGGUI (C) 2025"
+horizontal_alignment = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Menu"]
 modulate = Color(1, 1, 1, 0.705882)
@@ -73,10 +111,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -88.0
-offset_top = -184.0
-offset_right = 88.0
-offset_bottom = -32.0
+offset_left = -312.0
+offset_top = -182.0
+offset_right = -66.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("5_0ni4x")
@@ -92,10 +130,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -52.5
+offset_left = -273.0
 offset_top = -163.0
-offset_right = 52.5
-offset_bottom = -53.0
+offset_right = -107.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -121,6 +159,14 @@ offset_left = -640.0
 offset_top = 480.0
 offset_right = -640.0
 offset_bottom = 480.0
+metadata/_edit_lock_ = true
+
+[node name="MusicRoom" parent="." instance=ExtResource("18_yb6nn")]
+layout_mode = 1
+offset_left = -640.0
+offset_top = 960.0
+offset_right = -640.0
+offset_bottom = 960.0
 metadata/_edit_lock_ = true
 
 [connection signal="selected" from="Menu/MainMenuControls" to="Menu/Selector" method="handle_selection"]

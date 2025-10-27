@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://by2rj4ohug6cm"]
+
+[ext_resource type="Texture2D" uid="uid://c37oyyciq1j5d" path="res://stages/world_1/level textures/custom_sign.png" id="1_dme86"]
+
+[node name="CrouchSign" type="Sprite2D"]
+texture = ExtResource("1_dme86")

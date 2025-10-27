@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=3 uid="uid://dr4xbaesj6e7e"]
+
+[ext_resource type="Material" uid="uid://bqbnhvliq3s32" path="res://engine/shaders/add_unshaded_effect.tres" id="1_pwxsb"]
+[ext_resource type="Texture2D" uid="uid://lg2r4fcp54qt" path="res://stages/world_1/gfx/lightning/thunder.png" id="2_3ib2b"]
+[ext_resource type="Script" uid="uid://buhwqsl72u00b" path="res://stages/world_1/gfx/lightning/lightning_mario.gd" id="3_lf5en"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gxao"]
+atlas = ExtResource("2_3ib2b")
+region = Rect2(0, 0, 347, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc70k"]
+atlas = ExtResource("2_3ib2b")
+region = Rect2(347, 0, 347, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f77qn"]
+atlas = ExtResource("2_3ib2b")
+region = Rect2(694, 0, 347, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sef17"]
+atlas = ExtResource("2_3ib2b")
+region = Rect2(1041, 0, 347, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdnma"]
+atlas = ExtResource("2_3ib2b")
+region = Rect2(1388, 0, 347, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyige"]
+atlas = ExtResource("2_3ib2b")
+region = Rect2(1735, 0, 347, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eov4b"]
+atlas = ExtResource("2_3ib2b")
+region = Rect2(2082, 0, 347, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkuv2"]
+atlas = ExtResource("2_3ib2b")
+region = Rect2(2429, 0, 347, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f0xw"]
+atlas = ExtResource("2_3ib2b")
+region = Rect2(2776, 0, 347, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3tcs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gxao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc70k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f77qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sef17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdnma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyige")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eov4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkuv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f0xw")
+}],
+"loop": true,
+"name": &"lightning",
+"speed": 60.0
+}]
+
+[node name="LightningMario" type="AnimatedSprite2D"]
+material = ExtResource("1_pwxsb")
+sprite_frames = SubResource("SpriteFrames_r3tcs")
+animation = &"lightning"
+autoplay = "lightning"
+frame = 6
+frame_progress = 0.691313
+script = ExtResource("3_lf5en")

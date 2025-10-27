@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2640j7mj1r0f"]
+
+[ext_resource type="Texture2D" uid="uid://dkym6t7i8b4lc" path="res://stages/world_1/level textures/big_cloud.png" id="1_g0bjq"]
+
+[node name="BigCloud" type="Sprite2D"]
+texture = ExtResource("1_g0bjq")
